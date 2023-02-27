@@ -28,6 +28,8 @@ methods.forEach(method=>{
       //新增的元素也需要观测
       this.__ob__.observeArray(inserted)
     }
+    //数组的通知更新
+    ob.dep.notify()
    return oldArrayMethods[method].call(this,...args)
   }
 })
